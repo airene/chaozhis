@@ -1,0 +1,8 @@
+.DS_Store
+project/
+target/
+.project
+node_modules/
+.classpath
+.settings/
+appConfig.properties

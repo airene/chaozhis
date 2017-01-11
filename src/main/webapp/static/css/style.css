@@ -1,0 +1,190 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+body {
+    color: #55295b;
+    background: #ebe7eb;
+    font: normal 14px 'PingFangSC-Light', 'Microsoft Yahei', sans-serif;
+}
+
+img {
+    border: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a:link {
+    color: #55295b;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #55295b;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #cc7eb1;
+    text-decoration: underline;
+}
+
+.pull-right {
+    float: right
+}
+
+.pull-left {
+    float: left
+}
+
+.clear {
+    zoom: 1
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+/* framework */
+.cz-wrap {
+    margin: 0 auto;
+    width: 900px;
+    overflow: auto;
+}
+.cz-logo-img {padding: 39px 16px 0 0;}
+.cz-logo {
+    font-size: 30px;
+    width: 220px;
+    height: 80px;
+    padding-top: 30px;
+}
+
+.cz-logo span {
+    display: block;
+    text-indent: 2px;
+    margin-top: -8px;
+    font-size: 14px;
+    color: #824880;
+}
+
+.cz-theme {
+    padding: 50px 0 0 0;
+}
+
+.cz-theme li {
+    float: left;
+    width: 32px;
+    height: 10px;
+}
+
+.cz-content {
+    width: 700px;
+}
+
+.cz-sidebar {
+    width: 175px;
+    margin-left: 25px;
+    height: 200px;
+}
+.cz-sidebar h2 {
+    font-size: 14px;
+    line-height: 30px;
+    height: 30px;
+    text-align: right;
+    margin: 20px 0 10px 0;
+    border-bottom: 1px solid #dfdadf;
+}
+
+.cz-sidebar li {
+    text-align: right;
+    line-height: 22px;
+}
+
+.cz-sidebar .text {
+    text-align: right
+}
+
+.cz-sidebar .text span {
+    font-family: Georgia, sans-serif;
+    font-size: 28px;
+    color: #cc7eb1;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px 0 45px 0;
+    font-size: 12px;
+    color:#222;
+}
+
+/* modal component */
+.md-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 650px;
+    z-index: 2000;
+    visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateX(-50%) translateY(-50%);
+    perspective: 1300px;
+}
+
+.md-content {
+    transform-style: preserve-3d;
+    transform: rotateY(-70deg);
+    transition: all 0.3s;
+    opacity: 0;
+    border: 5px solid #ffffff;
+}
+
+.md-content img {
+    display: block;
+}
+.md-close {
+    background: #222;
+    position: absolute;
+    right: -18px;
+    top:-17px;
+    cursor: pointer;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    font-weight: 700;
+    text-indent: 5px;
+    border-radius: 100%;
+    border: 3px solid #fff;
+}
+
+.md-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: all 0.3s;
+}
+
+.md-show {
+    visibility: visible;
+}
+
+.md-show .md-content {
+    transform: rotateY(0deg);
+    opacity: 1;
+}
+
+.md-show ~ .md-overlay {
+    opacity: 1;
+    visibility: visible;
+}

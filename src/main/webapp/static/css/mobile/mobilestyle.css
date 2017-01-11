@@ -1,0 +1,109 @@
+body,div, dl, dt, dd, ul, ol, li, h1, h2, h3, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+body {
+    color: #55295b;
+    background: #e7e3e7;
+    font: normal 15px 'PingFangSC-Light', sans-serif;
+}
+
+img {
+    border: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a:link {
+    color: #f5f3f0;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #f5f3f0;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #dcd8d5;
+    text-decoration: none;
+}
+
+.clear {
+    zoom: 1
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.an-wrap {
+    margin: 0 15px;
+}
+.an-header {
+    margin: 0 auto;
+    padding:30px 0;
+}
+
+.an-logo {
+    color: #55295b;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 30px;
+    text-align: center;
+}
+
+.an-logo span {
+    display: block;
+    margin-top: -8px;
+    font-size: 14px;
+    color: #824880;
+}
+
+.contentshadow {
+    border-radius: 2px;
+    box-shadow: 0 1px 1px #c4afd6;
+}
+h2 {
+    font-size: 16px;
+    font-weight: 700;
+    height: 38px;
+    line-height: 38px;
+    color: #ffffff;
+    text-indent: 20px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    background: #824880;
+}
+.block {
+    background: #f7f3f6;
+    border-top: #fefcf7 1px solid;
+    -webkit-border-bottom-left-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+}
+
+.content ul {
+    padding: 10px 20px;
+}
+
+.content ul li {
+    padding: 10px 0;
+    line-height: 1.4em;
+    word-break: break-all;
+    border-bottom: 1px #d0bfcc dotted;
+}
+.content ul li:last-child {
+    border-bottom: none;
+}
+
+.footer {
+    text-align: left;
+    padding: 15px 0;
+    font-size: 13px;
+    color: #222;
+}
