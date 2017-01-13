@@ -21,9 +21,4 @@ public class IndexController {
         return "index";
     }
 
-    // fangying
-    @RequestMapping(value = "/u/usercenter", method = {RequestMethod.GET})
-    public String a() {
-        return "index";
-    }
 }

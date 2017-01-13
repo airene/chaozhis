@@ -9,19 +9,33 @@
 <#macro header>
 <div class="header">
     <div class="cz-wrap">
-        <div class="cz-logo pull-left">CHAOZHIS</div>
+        <div class="cz-logo pull-left"><a class="top" href="<@mcf.ctx />/">分享乐</a></div>
         <div class="cz-logo-r pull-right">
             <#if user??>
-                欢迎 <span class="cz-logo">${user.nickname}</span>,
-                &nbsp;&nbsp;<a class="top" href="<@mcf.ctx />/u/usercenter">个人中心</a>
+                欢迎您,  <a class="user" href="<@mcf.ctx />/u/user-center">${user.nickname}</a>
+                &nbsp;&nbsp;<a class="top" href="<@mcf.ctx />/u/user-center">来一发尖货</a>
+                &nbsp;&nbsp;<a class="top" href="<@mcf.ctx />/u/user-center">玩转攻略</a>
+                 &nbsp;&nbsp;<a class="top" href="<@mcf.ctx />/u/user-center">反馈</a>
                 &nbsp;&nbsp;<a class="top" href="<@mcf.ctx />/u/login-out">退出</a>
             <#else>
-                <a class="top" href="<@mcf.ctx />/reg">注册</a>&nbsp;&nbsp; <a class="top"
-                                                                             href="<@mcf.ctx />/login">登录</a>
+                <a class="top" href="<@mcf.ctx />/reg">玩转攻略</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="top" href="<@mcf.ctx />/reg">注册</a>&nbsp;&nbsp;
+                <a class="top" href="<@mcf.ctx />/login">登录</a>
             </#if>
         </div>
     </div>
 </div>
+</#macro>
+
+<#macro siderBar>
+    <div class="pull-left cz-sidebar">
+        <h2>个人中心</h2>
+        <ul>
+            <li><a href="<@mcf.ctx />/u/user-center">我的概览</a></li>
+            <li><a href="<@mcf.ctx />/u/invite-info">我邀请的人</a></li>
+            <li><a href="<@mcf.ctx />/u/post-list">审核分享</a></li>
+        </ul>
+    </div>
 </#macro>
 
 <#macro footer>
@@ -37,7 +51,7 @@
                 <li>项目情况</li>
             </ul>
         </div>
-        <div class="pull-right">版权所有 &copy; 2017 CHAOZHIS</div>
+        <div class="pull-right">版权所有 &copy; 2017 分享乐</div>
     </div>
 </div>
 <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
@@ -60,6 +74,6 @@
 <#macro footerMobile>
 <div class="clear"></div>
 <div class="an-wrap">
-    <div class="footer">&copy; 2017 Power by Chaozhis.com</div>
+    <div class="footer">&copy; 2017 Power By 分享乐</div>
 </div>
 </#macro>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * 注册
@@ -48,7 +49,7 @@ public class UserController {
         } else {
             WebUtils.setSessionValue(request, "user", user);
         }
-        return "redirect:/u/usercenter";
+        return "redirect:/u/user-center";
     }
 
     //fangying
@@ -57,6 +58,27 @@ public class UserController {
         WebUtils.removeSessionValue(request, "user");
         request.getSession().invalidate();
         return "redirect:/";
+    }
+
+    // fangying
+    @RequestMapping(value = "u/user-center", method = {RequestMethod.GET})
+    public String userCenter() {
+        return "user-center";
+    }
+
+    // fangying
+    @RequestMapping(value = "u/invite-info", method = {RequestMethod.GET})
+    public String inviteInfo(HttpServletRequest request, Model model) {
+        String sql = "select * from cz_web_user where referee_id = ? and status = 1";
+        List<UserDTO> inviteList = baseService.executeQuery(sql, UserDTO.class, ((UserDTO) WebUtils.getSessionValue(request, "user")).getId());
+        model.addAttribute("inviteList", inviteList);
+        return "invite-info";
+    }
+
+    // fangying
+    @RequestMapping(value = "u/post-list", method = {RequestMethod.GET})
+    public String shareAudit() {
+        return "post-list";
     }
 
 }
