@@ -5,8 +5,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, pre, code, form, fieldset, legend
 }
 
 body {
-    color: #55295b;
-    background: #ebe7eb;
+    color: #666;
     font: normal 14px 'PingFangSC-Light', 'Microsoft Yahei', sans-serif;
 }
 
@@ -33,6 +32,21 @@ a:hover {
     text-decoration: underline;
 }
 
+a.top:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.top:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.top:hover {
+    color: #ffc000;
+    text-decoration: underline;
+}
+
 .pull-right {
     float: right
 }
@@ -51,36 +65,76 @@ a:hover {
     clear: both
 }
 
+h2 {
+    font-size:18px;
+    border-bottom: 1px #ddd solid;
+    margin-bottom: 15px;
+}
+
+.header{
+    background: #360064;
+    color: #fff;
+    height: 33px;
+    padding-top:7px;
+    margin-bottom: 20px;
+}
+.cz-logo {
+    color: #ffc000;
+}
+.cz-logo-r {
+    color: #fff;
+}
+/* commom */
+.msg-warning {
+    background-color: #fcf8e3;
+    border:1px #faf2cc solid;
+    color: #8a6d3b;
+    border-radius: 4px;
+    margin: 15px;
+    padding: 15px;
+}
+.cz-form {
+
+}
+.cz-form li {
+    line-height: 40px;
+    height:40px;
+}
+.cz-form label{
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    padding-right: 10px;
+}
+.cz-form input{
+    border-radius: 3px;
+    height: 24px;
+    width: 200px;
+    border: 1px #ddd solid;
+    font-size:16px;
+    padding: 2px 5px;
+    outline: none;
+}
+.cz-form span{
+    color:#f00;
+}
+.cz-form button {
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    padding: 6px 12px 7px 12px;
+    color: #fff;
+    background: #5cb85c;
+    font-size:14px;
+}
 /* framework */
+
 .cz-wrap {
     margin: 0 auto;
     width: 900px;
     overflow: auto;
-}
-.cz-logo-img {padding: 39px 16px 0 0;}
-.cz-logo {
-    font-size: 30px;
-    width: 220px;
-    height: 80px;
-    padding-top: 30px;
-}
-
-.cz-logo span {
-    display: block;
-    text-indent: 2px;
-    margin-top: -8px;
-    font-size: 14px;
-    color: #824880;
-}
-
-.cz-theme {
-    padding: 50px 0 0 0;
-}
-
-.cz-theme li {
-    float: left;
-    width: 32px;
-    height: 10px;
+    line-height: 26px;
 }
 
 .cz-content {
@@ -116,11 +170,18 @@ a:hover {
     color: #cc7eb1;
 }
 
+/**/
+
 .footer {
     text-align: center;
-    padding: 30px 0 45px 0;
+    padding: 0 0 45px 0;
     font-size: 12px;
-    color:#222;
+    margin-top:20px;
+}
+
+.cz-footer li {
+    float:left;
+    margin-right:20px;
 }
 
 /* modal component */

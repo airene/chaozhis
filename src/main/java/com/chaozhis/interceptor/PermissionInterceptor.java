@@ -22,9 +22,9 @@ public class PermissionInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         UserDTO user = (UserDTO) request.getSession().getAttribute("user");
         String url = urlPathHelper.getLookupPathForRequest(request);
-        int flag = url.indexOf("/adm/");
+        int flag = url.indexOf("/u/");
         if (user == null && flag != -1) {
-            ModelAndView mav = new ModelAndView("redirect:/user/login");
+            ModelAndView mav = new ModelAndView("redirect:/login");
             mav.addObject("error", "nologin");
             throw new ModelAndViewDefiningException(mav);
         }
