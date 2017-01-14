@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>首页</title>
+    <title>首页 - 乐分享</title>
 <@mcf.head />
 </head>
 <body>

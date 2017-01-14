@@ -26,7 +26,6 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping(value = "/sms")
 public class SmsController {
 
-
     @Autowired
     private StringRedisTemplate redisTemplate;
 
@@ -40,34 +39,35 @@ public class SmsController {
     @ResponseBody
     public JSONObject sendSms(HttpServletRequest request) {
         String phone = WebUtils.getParamValue(request, "phone");
+        if (phone.length() == 11) {
+            IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", WebConf.getValue("ossKey"), WebConf.getValue("ossSecret"));
+            try {
+                String smsValiCode = ToolUtils.generateFourRandom();
+                String remoteIp = WebUtils.getRemortIp();
+                String canIpSms = redisTemplate.opsForValue().get(AppConstants.USER_IP_CAN_SEND_SMS + remoteIp);
+                String canPhoneSms = redisTemplate.opsForValue().get(AppConstants.USER_MOBILE_CAN_SEND_SMS + phone);
+                int ipSentCount = 0;
+                if (canIpSms != null) {
+                    ipSentCount = Integer.parseInt(canIpSms);
+                }
 
-        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", WebConf.getValue("ossKey"), WebConf.getValue("ossSecret"));
-        try {
-            String smsValiCode = ToolUtils.generateFourRandom();
-            String remoteIp = WebUtils.getRemortIp();
-            String canIpSms = redisTemplate.opsForValue().get(AppConstants.USER_IP_CAN_SEND_SMS + remoteIp);
-            String canPhoneSms = redisTemplate.opsForValue().get(AppConstants.USER_MOBILE_CAN_SEND_SMS + phone);
-            int ipSentCount = 0;
-            if (canIpSms != null) {
-                ipSentCount = Integer.parseInt(canIpSms);
+                if (ipSentCount < 5 && canPhoneSms == null) {
+                    DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Sms", "sms.aliyuncs.com");
+                    IAcsClient client = new DefaultAcsClient(profile);
+                    SingleSendSmsRequest aliRequest = new SingleSendSmsRequest();
+                    aliRequest.setSignName("乐分享");
+                    aliRequest.setTemplateCode("SMS_41480047");
+                    aliRequest.setParamString("{\"vali_code\":\"" + smsValiCode + "\"}");
+                    aliRequest.setRecNum(phone);
+                    SingleSendSmsResponse httpResponse = client.getAcsResponse(aliRequest);
+                    redisTemplate.opsForValue().set(AppConstants.USER_MOBILE_VALICODE + phone, smsValiCode, AppConstants.FIVE_MIN, TimeUnit.SECONDS);
+                    redisTemplate.opsForValue().set(AppConstants.USER_MOBILE_CAN_SEND_SMS + phone, "yes", AppConstants.ALMOST_TWO_MINUTES, TimeUnit.SECONDS);
+                    redisTemplate.opsForValue().set(AppConstants.USER_IP_CAN_SEND_SMS + remoteIp, (ipSentCount + 1) + "", AppConstants.ONE_DAY, TimeUnit.SECONDS);
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-
-            if (ipSentCount < 5 && canPhoneSms == null) {
-                DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Sms", "sms.aliyuncs.com");
-                IAcsClient client = new DefaultAcsClient(profile);
-                SingleSendSmsRequest aliRequest = new SingleSendSmsRequest();
-                aliRequest.setSignName("平路");
-                aliRequest.setTemplateCode("SMS_41480047");
-                aliRequest.setParamString("{\"vali_code\":\"" + smsValiCode + "\"}");
-                aliRequest.setRecNum(phone);
-                SingleSendSmsResponse httpResponse = client.getAcsResponse(aliRequest);
-                redisTemplate.opsForValue().set(AppConstants.USER_MOBILE_VALICODE + phone, smsValiCode, AppConstants.FIVE_MIN, TimeUnit.SECONDS);
-                redisTemplate.opsForValue().set(AppConstants.USER_MOBILE_CAN_SEND_SMS + phone, "yes", AppConstants.ALMOST_TWO_MINUTES, TimeUnit.SECONDS);
-                redisTemplate.opsForValue().set(AppConstants.USER_IP_CAN_SEND_SMS + remoteIp, (ipSentCount + 1) + "", AppConstants.ONE_DAY, TimeUnit.SECONDS);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
         String resultStr = "";

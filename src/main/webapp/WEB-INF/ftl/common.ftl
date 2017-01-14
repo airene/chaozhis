@@ -9,13 +9,12 @@
 <#macro header>
 <div class="header">
     <div class="cz-wrap">
-        <div class="cz-logo pull-left"><a class="top" href="<@mcf.ctx />/">分享乐</a></div>
+        <div class="cz-logo pull-left"><a class="top" href="<@mcf.ctx />/">乐分享</a></div>
         <div class="cz-logo-r pull-right">
             <#if user??>
                 欢迎您,  <a class="user" href="<@mcf.ctx />/u/user-center">${user.nickname}</a>
-                &nbsp;&nbsp;<a class="top" href="<@mcf.ctx />/u/user-center">来一发尖货</a>
+                <#if user.status == 2>&nbsp;&nbsp;<a class="top" href="<@mcf.ctx />/u/post-add">分享一个</a></#if>
                 &nbsp;&nbsp;<a class="top" href="<@mcf.ctx />/u/user-center">玩转攻略</a>
-                 &nbsp;&nbsp;<a class="top" href="<@mcf.ctx />/u/user-center">反馈</a>
                 &nbsp;&nbsp;<a class="top" href="<@mcf.ctx />/u/login-out">退出</a>
             <#else>
                 <a class="top" href="<@mcf.ctx />/reg">玩转攻略</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -41,7 +40,7 @@
 <#macro footer>
 <div class="clear"></div>
 <div class="footer">
-    <div class="cz-wrap" style="border-top: 1px #ddd solid;padding-top: 6px;">
+    <div class="cz-wrap" style="border-top: 1px #dbcee7 solid;padding-top: 6px;">
         <div class="pull-left">
             <ul class="cz-footer">
                 <li>加入我们</li>
@@ -51,7 +50,7 @@
                 <li>项目情况</li>
             </ul>
         </div>
-        <div class="pull-right">版权所有 &copy; 2017 分享乐</div>
+        <div class="pull-right">版权所有 &copy; 2017 乐分享</div>
     </div>
 </div>
 <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
@@ -74,6 +73,6 @@
 <#macro footerMobile>
 <div class="clear"></div>
 <div class="an-wrap">
-    <div class="footer">&copy; 2017 Power By 分享乐</div>
+    <div class="footer">&copy; 2017 Power By 乐分享</div>
 </div>
 </#macro>

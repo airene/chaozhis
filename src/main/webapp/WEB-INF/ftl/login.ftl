@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>登录</title>
+    <title>用户登录</title>
 <@mcf.head />
 </head>
 <body>
@@ -14,8 +14,7 @@
             <ul class="cz-form">
                 <li><label for="username">手机号</label><input id="username" name="username"></li>
                 <li><label for="password">密码</label><input id="password" name="password" type="password"></li>
-                <li><label></label>
-                    <button id="submit" name="submit" type="submit" class="btn btn-sm btn-success">登录</button>
+                <li><label></label><button id="submit" name="submit" type="submit" class="btn btn-sm btn-success">登录</button>
                 </li>
             </ul>
         </div>

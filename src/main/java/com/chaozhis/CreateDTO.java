@@ -23,9 +23,9 @@ public class CreateDTO {
 
     private final static String FILEPATH = "/Users/airene/";
 
-    private final static String TABLENAME = "cz_web_user";
+    private final static String TABLENAME = "cz_web_post";
 
-    private final static String CLASSNAME = "UserDTO";
+    private final static String CLASSNAME = "PostDTO";
 
     private final static String PAGENAME = "com.chaozhis.dto";
 
