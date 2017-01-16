@@ -71,7 +71,7 @@ public class WebUtils {
         return valiCodeObj == null ? "" : valiCodeObj.toString();
     }
 
-    // 获得参数的值 airene 去掉 utf-8 看看有没有乱码 增加XSS过滤
+    // 获得参数的值 fangying 去掉 utf-8 看看有没有乱码 增加XSS过滤
     public static String getParamValue(HttpServletRequest request, String paramName) {
         String temp = request.getParameter(paramName);
         if (temp == null) {

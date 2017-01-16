@@ -3,7 +3,7 @@ package com.chaozhis;
 /**
  * 程序级常量
  *
- * @author airene | 2014-07-01
+ * @author fangying | 2014-07-01
  */
 public class AppConstants {
     public static final int ONE_DAY = 24 * 60 * 60;

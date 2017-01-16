@@ -8,8 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * 摘要 ：
- * 四位随机数、六位随机数、产生订单号、产生分页SQL
+ * 四位随机数、六位随机数、产生订单号
  */
 
 public class ToolUtils {

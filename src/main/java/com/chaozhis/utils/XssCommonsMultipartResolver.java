@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 具有XSS过滤功能的上传视图解析
  *
- * @author airene | 2016-04-19
+ * @author fangying | 2016-04-19
  */
 public class XssCommonsMultipartResolver extends CommonsMultipartResolver {
     public XssCommonsMultipartResolver() {

@@ -1,4 +1,4 @@
-package com.chaozhis.web;
+package com.chaozhis;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;

@@ -53,15 +53,43 @@
         <div class="pull-right">版权所有 &copy; 2017 乐分享</div>
     </div>
 </div>
-<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 </#macro>
+
+<#macro topicChoose>
+    <select id="perfix_id" name="perfix_id">
+        <option value="1">"退烧"良品</option>
+        <option value="2">非常超值</option>
+        <option value="3">限时优惠</option>
+    </select>
+</#macro>
+
+<#macro classChoose>
+    <select id="class_id" name="class_id">
+        <option value="1">音乐周边</option>
+        <option value="2">外设</option>
+        <option value="3">服饰</option>
+        <option value="4">生活用品</option>
+        <option value="5">育儿</option>
+        <option value="6">美食</option>
+        <option value="99">其他</option>
+    </select>
+</#macro>
+
+
+
+
+
+
+
+
+
 
 <#macro headMobile>
 <meta name="description" content="">
 <meta name="author" content="">
 <link href="<@mcf.ctx />/static/css/mobile/mobilestyle.css?THEVERSIONSTRING" type="text/css" rel="stylesheet">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </#macro>
 
 <#macro headerMobile>

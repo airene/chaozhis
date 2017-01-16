@@ -38,7 +38,7 @@
 
     <servlet>
         <servlet-name>ValiCode</servlet-name>
-        <servlet-class>com.chaozhis.web.ValiCodeServlet</servlet-class>
+        <servlet-class>com.chaozhis.ValiCodeServlet</servlet-class>
         <init-param>
             <param-name>width</param-name>
             <param-value>80</param-value>

@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * XSS 在pathvariable时使用的类
  *
- * @author airene | 2016-04-19
+ * @author fangying | 2016-04-19
  */
 public class XssUrlPathHelper extends UrlPathHelper {
     @Override

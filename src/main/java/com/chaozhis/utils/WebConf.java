@@ -5,7 +5,7 @@ import java.net.URL;
 import java.util.Properties;
 
 /**
- * 读取文件类 fangying
+ * 读取文件类 fangying 2014-06-06
  */
 public class WebConf {
 

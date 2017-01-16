@@ -9,7 +9,7 @@ body {
     font: normal 14px 'PingFangSC-Light', 'Microsoft Yahei', sans-serif;
 }
 
-input, button {
+input, button,select {
     font: normal 14px 'PingFangSC-Light', 'Microsoft Yahei', sans-serif;
     outline: none;
 }

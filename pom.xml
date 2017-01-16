@@ -52,14 +52,14 @@
         </dependency>
 
 
-        <!--airene xssfilter @see com.maycf.utils.XssCommonsMultipartResolver-->
+        <!--fangying xssfilter @see com.maycf.utils.XssCommonsMultipartResolver-->
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
             <version>1.3.2</version>
         </dependency>
 
-        <!--airene 指定连接池版本2.4.2，不然redis老报错 -->
+        <!--fangying 指定连接池版本2.4.2，不然redis老报错 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-dbcp2</artifactId>
@@ -92,7 +92,7 @@
             <version>2.3.23</version>
         </dependency>
 
-        <!--airene jdbc sql log-->
+        <!--fangying jdbc sql log-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 权限拦截器 ：是否登录
  *
- * @author airene | 2016-02-01
+ * @author fangying | 2016-02-01
  */
 public class PermissionInterceptor extends HandlerInterceptorAdapter {
 

@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * Cookie操作类
  *
- * @author 方营 | 2014-04-24
+ * @author fangying | 2014-04-24
  */
 public class CookieUtil {
     public static void addCookie(HttpServletResponse response, String name, String value, int maxAge) {
