@@ -8,7 +8,7 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOTS</version>
     <properties>
-        <springframework.version>4.2.7.RELEASE</springframework.version>
+        <springframework.version>5.3.18</springframework.version>
         <spring-session.version>1.2.1.RELEASE</spring-session.version>
         <spring-redis.version>1.7.2.RELEASE</spring-redis.version>
         <aliyun.sdk.version>2.4.1</aliyun.sdk.version>
